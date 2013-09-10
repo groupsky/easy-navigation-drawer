@@ -1,0 +1,16 @@
+allprojects {
+    group = 'name.roupsky.geno.project'
+    version = '1.0-SNAPSHOT'
+}
+
+subprojects {
+    buildscript {
+		 repositories {
+		     mavenCentral()
+		     maven { url "http://mirrors.ibiblio.org/maven2" }
+		 }
+		 dependencies {
+		     classpath "com.android.tools.build:gradle:$System.env.ANDROID_GRADLE_VERSION"
+		 }
+    }
+}

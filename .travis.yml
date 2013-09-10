@@ -5,8 +5,9 @@ env:
     - SDK_VERSION=r22.0.5
     - GRADLE_VERSION=1.6
     - BUILD_TOOLS_VERSION=18.0.1
+    - ANDROID_GRADLE_VERSION=0.5.6
   matrix:
-    - ANDROID_SDKS=android-18,sysimg-18  ANDROID_TARGET=android-18  ANDROID_ABI=armeabi-v7a
+    - ANDROID_VERSION=18  ANDROID_SDKS=android-18,sysimg-18  ANDROID_TARGET=android-18  ANDROID_ABI=armeabi-v7a
 
 before_install:
   # Install base Android SDK

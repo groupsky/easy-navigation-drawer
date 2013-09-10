@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/home/groupsky/src/android-project-skeleton/Project/res" >
+            <file
+                name="activity_main"
+                path="/home/groupsky/src/android-project-skeleton/Project/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/home/groupsky/src/android-project-skeleton/Project/res/values/strings.xml"
+                qualifiers="" >
+                <string name="action_settings" >Settings
+                </string>
+                <string name="app_name" >Project
+                </string>
+                <string name="hello_world" >Hello world!
+                </string>
+            </file>
+        </source>
+        <source path="/home/groupsky/src/android-project-skeleton/Project/build/res/rs/release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/home/groupsky/src/android-project-skeleton/Project/src/release/res" />
+    </dataSet>
+
+</merger>
