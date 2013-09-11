@@ -1,9 +1,10 @@
 ext {
+    projectVersion = System.env.BUILD_NUMBER?:"SNAPSHOT"
 }
 
 allprojects {
     group = 'name.roupsky.geno.project'
-    version = '1.0-SNAPSHOT'
+    version = "1.0-$projectVersion"
     
     ext {
         android_compileSdkVersion = System.env.ANDROID_VERSION?System.env.ANDROID_VERSION.toInteger():18
