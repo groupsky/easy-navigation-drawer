@@ -1,7 +1,7 @@
 
 package name.roupsky.geno.project;
 
-import name.roupsky.geno.library.LibraryActivity;
+import name.roupsky.geno.easynavigationdrawer.LibraryActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
