@@ -1,4 +1,4 @@
-apply plugin: 'android'
+apply plugin: 'android-library'
 
 android {
   compileSdkVersion android_compileSdkVersion
@@ -16,9 +16,8 @@ android {
 
     instrumentTest.setRoot('tests')
   }
-
+    
   dependencies {
-    compile project(':Library')
     compile fileTree(dir: 'libs', include: '*.jar')    
   }
 }

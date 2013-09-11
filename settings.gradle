@@ -1,2 +1,2 @@
-include 'Project'
+include 'Library', 'Project'
 
