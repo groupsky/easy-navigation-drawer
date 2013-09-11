@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="name.roupsky.geno.library"
+    package="name.roupsky.geno.easynavigationdrawer"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -9,7 +9,7 @@
         android:targetSdkVersion="18" />
 
     <application>
-        <activity android:name="name.roupsky.geno.library.LibraryActivity" />
+        <activity android:name="name.roupsky.geno.easynavigationdrawer.LibraryActivity" />
     </application>
 
 </manifest>
