@@ -1,0 +1,17 @@
+#To remove debug logs:
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** v(...);
+    public static *** w(...);
+}
+
+-assumenosideeffects class java.lang.String {
+	public static *** format(...);
+}
+
+
+# ReTrace deobfuscation
+-renamesourcefileattribute SourceFile
+-keepattributes SourceFile,LineNumberTable
+
+

@@ -1,0 +1,25 @@
+apply plugin: 'android'
+
+android {
+  compileSdkVersion android_compileSdkVersion
+  buildToolsVersion android_buildToolsVersion
+  
+  sourceSets {
+    main {
+      manifest.srcFile 'AndroidManifest.xml'
+      java.srcDirs = ['src']
+      resources.srcDirs = ['src']
+      renderscript.srcDirs = ['src']
+      res.srcDirs = ['res']
+      assets.srcDirs = ['assets']
+    }
+
+    instrumentTest.setRoot('tests')
+  }
+
+  dependencies {
+    compile project(':Library')
+    compile fileTree(dir: 'libs', include: '*.jar')    
+  }
+}
+
