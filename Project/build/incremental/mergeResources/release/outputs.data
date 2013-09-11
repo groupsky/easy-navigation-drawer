@@ -1,5 +1,0 @@
-# incremental data. DO NOT EDIT.
-# format is <lastModified> <length> <SHA-1> <path>
-# Encoding is UTF-8
-1378850697000 316 5712792df10318f71a9fab1264c8841d2197bc5d /home/groupsky/src/android-project-skeleton/Project/build/res/all/release/values/values.xml
-1378850697000 512 252d6cd5f246b43bc86bc66d1e2dae214f9f23a3 /home/groupsky/src/android-project-skeleton/Project/build/res/all/release/layout/activity_main.xml
