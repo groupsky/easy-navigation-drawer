@@ -18,6 +18,7 @@ android {
   }
 
   dependencies {
+    compile 'com.android.support:appcompat-v7:18+'
     compile project(':easy-navigation-drawer')
   }
 }
