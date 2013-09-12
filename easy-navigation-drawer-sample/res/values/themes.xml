@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme" parent="@style/Theme.AppCompat">
+    <style name="Theme.App" parent="@style/Theme.Base.App">
         <item name="android:windowBackground">@color/windowBackground</item>
-        <item name="navigationMenuStyle">@style/AppStyle.NavigationMenu</item>
+        <item name="navigationMenuStyle">@style/Widget.App.NavigationMenu</item>
+        <item name="drawerStyle">@style/Widget.EasyNavigationDrawer</item>
     </style>
 
-    <style name="AppTheme.Light" parent="@style/Theme.AppCompat.Light">
+    <style name="Theme.App.Light" parent="@style/Theme.Base.App.Light">
         <item name="android:windowBackground">@color/windowBackgroundLight</item>
-        <item name="navigationMenuStyle">@style/AppStyle.NavigationMenu.Light</item>
+        <item name="navigationMenuStyle">@style/Widget.App.NavigationMenu.Light</item>
+        <item name="drawerStyle">@style/Widget.EasyNavigationDrawer.Light</item>
     </style>
 
 </resources>

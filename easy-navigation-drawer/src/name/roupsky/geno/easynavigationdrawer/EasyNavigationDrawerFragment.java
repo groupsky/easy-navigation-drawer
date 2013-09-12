@@ -5,6 +5,8 @@ import static android.view.Gravity.LEFT;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import android.app.Activity;
 import android.content.res.Configuration;
+import android.content.res.Resources.Theme;
+import android.content.res.TypedArray;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -23,6 +25,8 @@ public class EasyNavigationDrawerFragment extends Fragment implements DrawerList
     private ActionBarDrawerToggle drawerToggle;
 
     private DrawerLayout drawerLayout;
+
+    private int drawerIndicator;
 
     public EasyNavigationDrawerFragment() {
         setHasOptionsMenu(true);
@@ -88,6 +92,8 @@ public class EasyNavigationDrawerFragment extends Fragment implements DrawerList
         drawerLayout.setDrawerListener(this);
         drawerLayout.setId(R.id.grd_drawer_layout);
 
+        styleDrawer();
+
         activity.setContentView(drawerLayout, DRAWER_LAYOUT_PARAMS);
 
         View contentView = activity.getLayoutInflater().inflate(contentLayoutResID, drawerLayout, false);
@@ -97,7 +103,21 @@ public class EasyNavigationDrawerFragment extends Fragment implements DrawerList
         DrawerLayout.LayoutParams lp = new DrawerLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT, LEFT);
         drawerLayout.addView(leftContentView, lp);
 
-        drawerToggle = new ActionBarDrawerToggle(activity, drawerLayout, R.drawable.ic_drawer, R.string.grd_drawer_open, R.string.grd_drawer_close);
+        drawerToggle = new ActionBarDrawerToggle(activity, drawerLayout, drawerIndicator, R.string.grd_drawer_open, R.string.grd_drawer_close);
+    }
+
+    private void styleDrawer() {
+        Theme theme = drawerLayout.getContext().getTheme();
+
+        TypedArray a = theme.obtainStyledAttributes(null, R.styleable.EasyNavigationDrawerFragment, R.attr.drawerStyle, R.style.Widget_EasyNavigationDrawer);
+
+        drawerIndicator = a.getResourceId(R.styleable.EasyNavigationDrawerFragment_drawerIndicator, R.drawable.ic_drawer);
+        int drawerShadow = a.getResourceId(R.styleable.EasyNavigationDrawerFragment_drawerShadow, 0);
+        if (drawerShadow != 0) {
+            drawerLayout.setDrawerShadow(drawerShadow, LEFT);
+        }
+
+        a.recycle();
     }
 
     public DrawerLayout getDrawerLayout() {
