@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="drawerStyle" format="reference" />
+
+    <declare-styleable name="EasyNavigationDrawerFragment">
+        <attr name="drawerIndicator" format="reference" />
+        <attr name="drawerShadow" format="reference" />
+    </declare-styleable>
+
+</resources>

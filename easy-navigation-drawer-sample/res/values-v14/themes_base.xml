@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Base.App" parent="Theme.AppCompat">
+        <item name="android:actionBarStyle">@android:style/Widget.Holo.ActionBar.Solid</item>
+    </style>
+
+    <style name="Theme.Base.App.Light" parent="Theme.AppCompat.Light">
+        <item name="android:actionBarStyle">@android:style/Widget.Holo.Light.ActionBar.Solid</item>
+    </style>
+
+</resources>

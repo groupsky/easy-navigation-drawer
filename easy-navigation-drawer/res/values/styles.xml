@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.EasyNavigationDrawer" parent="">
+        <item name="drawerIndicator">@drawable/ic_drawer</item>
+        <item name="drawerShadow">@drawable/drawer_shadow</item>
+    </style>
+
+    <style name="Widget.EasyNavigationDrawer.Light" parent="">
+        <item name="drawerIndicator">@drawable/ic_drawer_light</item>
+        <item name="drawerShadow">@drawable/drawer_shadow_light</item>
+    </style>
+
+</resources>
