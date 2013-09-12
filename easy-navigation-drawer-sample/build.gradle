@@ -19,7 +19,6 @@ android {
 
   dependencies {
     compile project(':easy-navigation-drawer')
-    compile fileTree(dir: 'libs', include: '*.jar')    
   }
 }
 
