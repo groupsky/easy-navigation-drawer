@@ -99,4 +99,12 @@ public class EasyNavigationDrawerFragment extends Fragment implements DrawerList
 
         drawerToggle = new ActionBarDrawerToggle(activity, drawerLayout, R.drawable.ic_drawer, R.string.grd_drawer_open, R.string.grd_drawer_close);
     }
+
+    public DrawerLayout getDrawerLayout() {
+        return drawerLayout;
+    }
+
+    public ActionBarDrawerToggle getDrawerToggle() {
+        return drawerToggle;
+    }
 }

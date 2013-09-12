@@ -15,6 +15,7 @@ public class ChildActivity extends ActionBarActivity {
         new EasyNavigationDrawerBuilder()
                 .setContentView(R.layout.activity_child)
                 .setLeftContentView(R.layout.navigation_menu)
+                .disableDrawerIndicator()
                 .install(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

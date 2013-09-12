@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
+import android.view.View;
 
 /**
  * Builder for configuring and attaching navigation drawer to an activity
@@ -19,8 +20,9 @@ public class EasyNavigationDrawerBuilder {
      */
     private static final String TAG = "GRD.Builder";
 
-    private int contentLayoutResID;
-    private int leftContentLayoutResID;
+    private int contentLayoutResID = View.NO_ID;
+    private int leftContentLayoutResID = View.NO_ID;
+    private boolean drawerIndicatorEnabled = true;
 
     public EasyNavigationDrawerBuilder() {
     }
@@ -47,6 +49,11 @@ public class EasyNavigationDrawerBuilder {
         return this;
     }
 
+    public EasyNavigationDrawerBuilder disableDrawerIndicator() {
+        drawerIndicatorEnabled = false;
+        return this;
+    }
+
     public void install(FragmentActivity activity) {
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
 
@@ -60,6 +67,8 @@ public class EasyNavigationDrawerBuilder {
         }
 
         drawerFragment.setupDrawer(activity, contentLayoutResID, leftContentLayoutResID);
+
+        drawerFragment.getDrawerToggle().setDrawerIndicatorEnabled(drawerIndicatorEnabled);
     }
 
 }
