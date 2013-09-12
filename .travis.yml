@@ -7,7 +7,9 @@ env:
     - BUILD_TOOLS_VERSION=18.0.1
     - ANDROID_GRADLE_VERSION=0.5.6
   matrix:
-    - ANDROID_VERSION=18  ANDROID_SDKS=android-18,sysimg-18  ANDROID_TARGET=android-18  ANDROID_ABI=armeabi-v7a
+# Disabled emulator since we don't have tests at the moment
+#    - ANDROID_VERSION=18  ANDROID_SDKS=android-18,sysimg-18  ANDROID_TARGET=android-18  ANDROID_ABI=armeabi-v7a
+    - ANDROID_VERSION=18  ANDROID_SDKS=android-18
 
 before_install:
   # Install base Android SDK
@@ -32,12 +34,13 @@ before_install:
   # issues in the future though.
   - echo y | android update sdk --filter build-tools-${BUILD_TOOLS_VERSION},platform-tools,extra-android-support,extra-android-m2repository,${ANDROID_SDKS} --no-ui --force > /dev/null
 
-  # Create and start emulator
-  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
-  - emulator -avd test -no-skin -no-audio -no-window &
-  
-before_script:
-  - ./tools/wait_for_emulator
+# Disabled emulator since we on't have tests at the moment
+#  # Create and start emulator
+#  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+#  - emulator -avd test -no-skin -no-audio -no-window &
+#  
+#before_script:
+#  - ./tools/wait_for_emulator
 
 script:
   - gradle clean build
