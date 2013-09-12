@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello_world">Hello world!</string>
-
+    <string name="grd_drawer_open">Open navigation drawer</string>
+    <string name="grd_drawer_close">Close navigation drawer</string>
 </resources>
