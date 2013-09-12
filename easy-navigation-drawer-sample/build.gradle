@@ -21,5 +21,23 @@ android {
     compile 'com.android.support:appcompat-v7:18+'
     compile project(':easy-navigation-drawer')
   }
+
+    signingConfigs {
+        release {
+            storeFile file("../tools/keystore")
+            storePassword System.env.STORE_PASSWORD
+            keyAlias "sample"
+            keyPassword System.env.KEY_PASSWORD
+        }
+    }
+    
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            runProguard true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile file('proguard-project.txt')
+        }
+    }
 }
 

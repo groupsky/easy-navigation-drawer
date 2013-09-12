@@ -1,0 +1,40 @@
+#!/bin/sh
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+  echo "This is a pull request. No deployment will be done."
+  exit 0
+fi
+if [ "$TRAVIS_BRANCH" != "master" ]; then
+  echo "Testing on a branch other than master. No deployment will be done."
+  exit 0
+fi
+if [ -z "$TESTFLIGHT_API_TOKEN" ]; then
+  echo "TESTFLIGHT_API_TOKEN is not defined. To obtain one visit https://testflightapp.com/account/#api"
+  exit 1
+fi
+if [ -z "$TESTFLIGHT_TEAM_TOKEN" ]; then
+  echo "TESTFLIGHT_TEAM_TOKEN is not defined. To obtain one visit https://testflightapp.com/dashboard/team/edit/"
+  exit 1
+fi
+
+if [ $# -eq 0 ]; then
+  APP="*-release.apk"
+else
+  APP="$@"
+fi
+
+RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
+RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
+
+for i in $APP; do
+  for apk in `find -name "$APP"`; do
+    echo "*************************************"
+    echo "*    Uploading $apk"
+    echo "*************************************"
+    curl http://testflightapp.com/api/builds.json \
+      -F file="@$apk" \
+      -F api_token="$TESTFLIGHT_API_TOKEN" \
+      -F team_token="$TESTFLIGHT_TEAM_TOKEN" \
+      -F distribution_lists="$TESTFLIGHT_DISTIBUTION_LISTS" \
+      -F notes="$RELEASE_NOTES" -v
+  done
+done
