@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat">
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="navigationMenuStyle">@style/AppStyle.NavigationMenu</item>
+    </style>
+
+    <style name="AppTheme.Light" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/windowBackgroundLight</item>
+        <item name="navigationMenuStyle">@style/AppStyle.NavigationMenu.Light</item>
+    </style>
+
+</resources>

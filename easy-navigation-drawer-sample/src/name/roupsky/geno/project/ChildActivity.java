@@ -17,6 +17,8 @@ public class ChildActivity extends ActionBarActivity {
                 .setLeftContentView(R.layout.navigation_menu)
                 .install(this);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // after install the content is accessible by simple findViewById
         ((TextView) findViewById(android.R.id.text1)).setText("Text from code");
     }

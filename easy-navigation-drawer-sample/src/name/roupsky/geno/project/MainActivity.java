@@ -19,6 +19,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
                 .setLeftContentView(R.layout.navigation_menu)
                 .install(this);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // after install the menu is accessible by standard findViewById
         findViewById(android.R.id.button1).setOnClickListener(this);
     }

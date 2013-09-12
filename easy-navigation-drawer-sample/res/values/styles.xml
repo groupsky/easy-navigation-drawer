@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppStyle" />
+
+    <style name="AppStyle.NavigationMenu">
+        <item name="android:background">#690</item>
+    </style>
+
+    <style name="AppStyle.NavigationMenu.Light">
+        <item name="android:background">#9c0</item>
+    </style>
+
+</resources>
