@@ -3,6 +3,14 @@ apply plugin: 'android'
 android {
   compileSdkVersion android_compileSdkVersion
   buildToolsVersion android_buildToolsVersion
+
+  if (System.env.BUILD_NUMBER) {
+    println "project.version = ${project.version}"
+    defaultConfig {
+      versionCode System.env.BUILD_NUMBER.toInteger()
+      versionName project.version
+    }
+  }
   
   sourceSets {
     main {
