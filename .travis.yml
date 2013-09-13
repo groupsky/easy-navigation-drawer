@@ -42,7 +42,7 @@ before_install:
 #  - ./tools/wait_for_emulator
 
 script:
-  - BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+  - export BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
   - gradle clean build
 
 after_success:
