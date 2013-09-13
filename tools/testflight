@@ -23,13 +23,14 @@ else
 fi
 
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
-RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
+COMMIT_LOG=`git log --no-merges --pretty=format:"%aN: %s" TRAVIS_COMMIT_RANGE`
+RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE\n\n$COMMIT_LOG"
 
 for i in $APP; do
   for apk in `find -name "$APP"`; do
-    echo "*************************************"
+    echo "**************************************************************************"
     echo "*    Uploading $apk"
-    echo "*************************************"
+    echo "**************************************************************************"
     curl http://testflightapp.com/api/builds.json \
       -F file="@$apk" \
       -F api_token="$TESTFLIGHT_API_TOKEN" \
