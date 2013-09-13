@@ -22,6 +22,7 @@ android {
     compile project(':easy-navigation-drawer')
   }
 
+  if (System.env.STORE_PASSWORD && System.env.KEY_PASSWORD) {
     signingConfigs {
         release {
             storeFile file("../tools/keystore")
@@ -39,5 +40,6 @@ android {
             proguardFile file('proguard-project.txt')
         }
     }
+  }
 }
 
